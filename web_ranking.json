@@ -1,0 +1,731 @@
+[
+  {
+    "Country":"Argentina",
+    "Country ID":32,
+    "Web Index score":55.2,
+    "Universal Access":47.1,
+    "Relevant Content":71.5,
+    "Freedom and Openness":52.2,
+    "Impact and Empowerment":39.8
+  },
+  {
+    "Country":"Australia",
+    "Country ID":36,
+    "Web Index score":86.4,
+    "Universal Access":82.4,
+    "Relevant Content":92.6,
+    "Freedom and Openness":67.7,
+    "Impact and Empowerment":74.3
+  },
+  {
+    "Country":"Austria",
+    "Country ID":40,
+    "Web Index score":84.8,
+    "Universal Access":85.9,
+    "Relevant Content":82.2,
+    "Freedom and Openness":78.6,
+    "Impact and Empowerment":66.4
+  },
+  {
+    "Country":"Bahrain",
+    "Country ID":48,
+    "Web Index score":38.4,
+    "Universal Access":53.1,
+    "Relevant Content":59.3,
+    "Freedom and Openness":13.6,
+    "Impact and Empowerment":28.9
+  },
+  {
+    "Country":"Bangladesh",
+    "Country ID":50,
+    "Web Index score":24.4,
+    "Universal Access":25.1,
+    "Relevant Content":24.4,
+    "Freedom and Openness":40.3,
+    "Impact and Empowerment":16.4
+  },
+  {
+    "Country":"Belgium",
+    "Country ID":56,
+    "Web Index score":75.2,
+    "Universal Access":78.7,
+    "Relevant Content":72.3,
+    "Freedom and Openness":73.7,
+    "Impact and Empowerment":56.2
+  },
+  {
+    "Country":"Benin",
+    "Country ID":204,
+    "Web Index score":16.1,
+    "Universal Access":2.5,
+    "Relevant Content":7.8,
+    "Freedom and Openness":59.9,
+    "Impact and Empowerment":6.5
+  },
+  {
+    "Country":"Botswana",
+    "Country ID":72,
+    "Web Index score":17.4,
+    "Universal Access":27.7,
+    "Relevant Content":5.8,
+    "Freedom and Openness":49.8,
+    "Impact and Empowerment":1.6
+  },
+  {
+    "Country":"Brazil",
+    "Country ID":76,
+    "Web Index score":58.7,
+    "Universal Access":49.6,
+    "Relevant Content":57.1,
+    "Freedom and Openness":63.1,
+    "Impact and Empowerment":51.9
+  },
+  {
+    "Country":"Burkina Faso",
+    "Country ID":854,
+    "Web Index score":13.6,
+    "Universal Access":4.8,
+    "Relevant Content":7,
+    "Freedom and Openness":45.6,
+    "Impact and Empowerment":10.2
+  },
+  {
+    "Country":"Cameroon",
+    "Country ID":120,
+    "Web Index score":10.6,
+    "Universal Access":8.3,
+    "Relevant Content":6.6,
+    "Freedom and Openness":29.6,
+    "Impact and Empowerment":13
+  },
+  {
+    "Country":"Canada",
+    "Country ID":124,
+    "Web Index score":84.3,
+    "Universal Access":79.4,
+    "Relevant Content":87.8,
+    "Freedom and Openness":72.7,
+    "Impact and Empowerment":70
+  },
+  {
+    "Country":"Chile",
+    "Country ID":152,
+    "Web Index score":68.9,
+    "Universal Access":57.6,
+    "Relevant Content":76.6,
+    "Freedom and Openness":74,
+    "Impact and Empowerment":49.2
+  },
+  {
+    "Country":"China",
+    "Country ID":156,
+    "Web Index score":31.1,
+    "Universal Access":45.5,
+    "Relevant Content":46.8,
+    "Freedom and Openness":5.3,
+    "Impact and Empowerment":31.2
+  },
+  {
+    "Country":"Colombia",
+    "Country ID":170,
+    "Web Index score":60.1,
+    "Universal Access":54.2,
+    "Relevant Content":63.2,
+    "Freedom and Openness":56.4,
+    "Impact and Empowerment":52.6
+  },
+  {
+    "Country":"Costa Rica",
+    "Country ID":188,
+    "Web Index score":57.2,
+    "Universal Access":40.5,
+    "Relevant Content":58.4,
+    "Freedom and Openness":72.7,
+    "Impact and Empowerment":44.8
+  },
+  {
+    "Country":"Czech Republic",
+    "Country ID":203,
+    "Web Index score":72.5,
+    "Universal Access":74.3,
+    "Relevant Content":61.7,
+    "Freedom and Openness":78.4,
+    "Impact and Empowerment":56.9
+  },
+  {
+    "Country":"Denmark",
+    "Country ID":208,
+    "Web Index score":92.4,
+    "Universal Access":96,
+    "Relevant Content":89.8,
+    "Freedom and Openness":84.8,
+    "Impact and Empowerment":69.4
+  },
+  {
+    "Country":"Ecuador",
+    "Country ID":218,
+    "Web Index score":43.9,
+    "Universal Access":42.2,
+    "Relevant Content":50.8,
+    "Freedom and Openness":46.7,
+    "Impact and Empowerment":32.8
+  },
+  {
+    "Country":"Egypt",
+    "Country ID":818,
+    "Web Index score":24.5,
+    "Universal Access":32.3,
+    "Relevant Content":32,
+    "Freedom and Openness":28.3,
+    "Impact and Empowerment":14.9
+  },
+  {
+    "Country":"Estonia",
+    "Country ID":233,
+    "Web Index score":77.3,
+    "Universal Access":75.3,
+    "Relevant Content":67,
+    "Freedom and Openness":80.3,
+    "Impact and Empowerment":64.2
+  },
+  {
+    "Country":"Ethiopia",
+    "Country ID":231,
+    "Web Index score":1.8,
+    "Universal Access":0,
+    "Relevant Content":5.4,
+    "Freedom and Openness":12.9,
+    "Impact and Empowerment":8.5
+  },
+  {
+    "Country":"Finland",
+    "Country ID":246,
+    "Web Index score":91.9,
+    "Universal Access":85.9,
+    "Relevant Content":84.2,
+    "Freedom and Openness":95.1,
+    "Impact and Empowerment":71.7
+  },
+  {
+    "Country":"France",
+    "Country ID":250,
+    "Web Index score":90.9,
+    "Universal Access":82.3,
+    "Relevant Content":88.9,
+    "Freedom and Openness":86.9,
+    "Impact and Empowerment":74.4
+  },
+  {
+    "Country":"Germany",
+    "Country ID":276,
+    "Web Index score":83.1,
+    "Universal Access":86.2,
+    "Relevant Content":80.1,
+    "Freedom and Openness":74.6,
+    "Impact and Empowerment":66.5
+  },
+  {
+    "Country":"Ghana",
+    "Country ID":288,
+    "Web Index score":32.7,
+    "Universal Access":23.9,
+    "Relevant Content":28.1,
+    "Freedom and Openness":63.3,
+    "Impact and Empowerment":18.8
+  },
+  {
+    "Country":"Greece",
+    "Country ID":300,
+    "Web Index score":70.8,
+    "Universal Access":63.9,
+    "Relevant Content":74.8,
+    "Freedom and Openness":80,
+    "Impact and Empowerment":46.8
+  },
+  {
+    "Country":"Hungary",
+    "Country ID":348,
+    "Web Index score":46.3,
+    "Universal Access":39.2,
+    "Relevant Content":43.8,
+    "Freedom and Openness":61.5,
+    "Impact and Empowerment":35.5
+  },
+  {
+    "Country":"Iceland",
+    "Country ID":352,
+    "Web Index score":91.9,
+    "Universal Access":100,
+    "Relevant Content":88.3,
+    "Freedom and Openness":92.2,
+    "Impact and Empowerment":59.5
+  },
+  {
+    "Country":"India",
+    "Country ID":356,
+    "Web Index score":32.4,
+    "Universal Access":28.6,
+    "Relevant Content":22.6,
+    "Freedom and Openness":49.5,
+    "Impact and Empowerment":31.2
+  },
+  {
+    "Country":"Indonesia",
+    "Country ID":360,
+    "Web Index score":39.7,
+    "Universal Access":34.8,
+    "Relevant Content":47,
+    "Freedom and Openness":48.8,
+    "Impact and Empowerment":27.2
+  },
+  {
+    "Country":"Ireland",
+    "Country ID":372,
+    "Web Index score":76,
+    "Universal Access":72.3,
+    "Relevant Content":79.3,
+    "Freedom and Openness":79,
+    "Impact and Empowerment":52.7
+  },
+  {
+    "Country":"Israel",
+    "Country ID":376,
+    "Web Index score":72.3,
+    "Universal Access":72,
+    "Relevant Content":78.3,
+    "Freedom and Openness":67.5,
+    "Impact and Empowerment":52.7
+  },
+  {
+    "Country":"Italy",
+    "Country ID":380,
+    "Web Index score":74.1,
+    "Universal Access":76.5,
+    "Relevant Content":70.3,
+    "Freedom and Openness":74.2,
+    "Impact and Empowerment":56
+  },
+  {
+    "Country":"Jamaica",
+    "Country ID":388,
+    "Web Index score":40,
+    "Universal Access":35.8,
+    "Relevant Content":45.2,
+    "Freedom and Openness":54.4,
+    "Impact and Empowerment":24.2
+  },
+  {
+    "Country":"Japan",
+    "Country ID":392,
+    "Web Index score":86.4,
+    "Universal Access":84,
+    "Relevant Content":82.9,
+    "Freedom and Openness":78.9,
+    "Impact and Empowerment":71.9
+  },
+  {
+    "Country":"Jordan",
+    "Country ID":400,
+    "Web Index score":27.1,
+    "Universal Access":47.2,
+    "Relevant Content":39.3,
+    "Freedom and Openness":12.1,
+    "Impact and Empowerment":18.6
+  },
+  {
+    "Country":"Kazakhstan",
+    "Country ID":398,
+    "Web Index score":38.5,
+    "Universal Access":46,
+    "Relevant Content":59.9,
+    "Freedom and Openness":10.7,
+    "Impact and Empowerment":36.8
+  },
+  {
+    "Country":"Kenya",
+    "Country ID":404,
+    "Web Index score":36.8,
+    "Universal Access":27.7,
+    "Relevant Content":38.3,
+    "Freedom and Openness":39.6,
+    "Impact and Empowerment":40
+  },
+  {
+    "Country":"Malawi",
+    "Country ID":454,
+    "Web Index score":12.2,
+    "Universal Access":3.1,
+    "Relevant Content":0,
+    "Freedom and Openness":45.9,
+    "Impact and Empowerment":13.5
+  },
+  {
+    "Country":"Malaysia",
+    "Country ID":458,
+    "Web Index score":53.5,
+    "Universal Access":49.9,
+    "Relevant Content":62.5,
+    "Freedom and Openness":33.8,
+    "Impact and Empowerment":56.5
+  },
+  {
+    "Country":"Mali",
+    "Country ID":466,
+    "Web Index score":7.7,
+    "Universal Access":10.1,
+    "Relevant Content":4.7,
+    "Freedom and Openness":34.9,
+    "Impact and Empowerment":0
+  },
+  {
+    "Country":"Mauritius",
+    "Country ID":480,
+    "Web Index score":47.8,
+    "Universal Access":44.1,
+    "Relevant Content":48.3,
+    "Freedom and Openness":66.5,
+    "Impact and Empowerment":28
+  },
+  {
+    "Country":"Mexico",
+    "Country ID":484,
+    "Web Index score":61.6,
+    "Universal Access":48.9,
+    "Relevant Content":68.6,
+    "Freedom and Openness":67.1,
+    "Impact and Empowerment":47.1
+  },
+  {
+    "Country":"Morocco",
+    "Country ID":504,
+    "Web Index score":34.4,
+    "Universal Access":22.2,
+    "Relevant Content":35.4,
+    "Freedom and Openness":40.7,
+    "Impact and Empowerment":38.8
+  },
+  {
+    "Country":"Namibia",
+    "Country ID":516,
+    "Web Index score":30.2,
+    "Universal Access":41,
+    "Relevant Content":18.9,
+    "Freedom and Openness":59.6,
+    "Impact and Empowerment":9.6
+  },
+  {
+    "Country":"Nepal",
+    "Country ID":524,
+    "Web Index score":14.7,
+    "Universal Access":9.6,
+    "Relevant Content":15.5,
+    "Freedom and Openness":34.1,
+    "Impact and Empowerment":12.4
+  },
+  {
+    "Country":"Netherlands",
+    "Country ID":528,
+    "Web Index score":86.4,
+    "Universal Access":79,
+    "Relevant Content":84.2,
+    "Freedom and Openness":87.8,
+    "Impact and Empowerment":66.8
+  },
+  {
+    "Country":"New Zealand",
+    "Country ID":554,
+    "Web Index score":92.4,
+    "Universal Access":85.8,
+    "Relevant Content":90.7,
+    "Freedom and Openness":83.4,
+    "Impact and Empowerment":77.8
+  },
+  {
+    "Country":"Nigeria",
+    "Country ID":566,
+    "Web Index score":20.2,
+    "Universal Access":29,
+    "Relevant Content":13.6,
+    "Freedom and Openness":37.1,
+    "Impact and Empowerment":13.1
+  },
+  {
+    "Country":"Norway",
+    "Country ID":578,
+    "Web Index score":97.5,
+    "Universal Access":87.6,
+    "Relevant Content":90.2,
+    "Freedom and Openness":100,
+    "Impact and Empowerment":77.8
+  },
+  {
+    "Country":"Pakistan",
+    "Country ID":586,
+    "Web Index score":10.4,
+    "Universal Access":21.3,
+    "Relevant Content":12.4,
+    "Freedom and Openness":9.8,
+    "Impact and Empowerment":14.3
+  },
+  {
+    "Country":"Peru",
+    "Country ID":604,
+    "Web Index score":48.1,
+    "Universal Access":35.2,
+    "Relevant Content":52.8,
+    "Freedom and Openness":68.6,
+    "Impact and Empowerment":29.8
+  },
+  {
+    "Country":"Philippines",
+    "Country ID":608,
+    "Web Index score":48.2,
+    "Universal Access":41.6,
+    "Relevant Content":54.5,
+    "Freedom and Openness":50.3,
+    "Impact and Empowerment":39.8
+  },
+  {
+    "Country":"Poland",
+    "Country ID":616,
+    "Web Index score":74.2,
+    "Universal Access":71.9,
+    "Relevant Content":69,
+    "Freedom and Openness":78,
+    "Impact and Empowerment":57.7
+  },
+  {
+    "Country":"Portugal",
+    "Country ID":620,
+    "Web Index score":72.8,
+    "Universal Access":78.8,
+    "Relevant Content":69.4,
+    "Freedom and Openness":81.2,
+    "Impact and Empowerment":44.8
+  },
+  {
+    "Country":"Qatar",
+    "Country ID":634,
+    "Web Index score":38,
+    "Universal Access":67.7,
+    "Relevant Content":59.3,
+    "Freedom and Openness":9.2,
+    "Impact and Empowerment":20.3
+  },
+  {
+    "Country":"Republic Of Korea",
+    "Country ID":410,
+    "Web Index score":87.4,
+    "Universal Access":91.9,
+    "Relevant Content":90,
+    "Freedom and Openness":66.8,
+    "Impact and Empowerment":73.1
+  },
+  {
+    "Country":"Russian Federation",
+    "Country ID":643,
+    "Web Index score":47.1,
+    "Universal Access":46.7,
+    "Relevant Content":60.2,
+    "Freedom and Openness":26.5,
+    "Impact and Empowerment":48.3
+  },
+  {
+    "Country":"Rwanda",
+    "Country ID":646,
+    "Web Index score":12,
+    "Universal Access":16.7,
+    "Relevant Content":9.9,
+    "Freedom and Openness":17.4,
+    "Impact and Empowerment":18.5
+  },
+  {
+    "Country":"Saudi Arabia",
+    "Country ID":682,
+    "Web Index score":16.5,
+    "Universal Access":41,
+    "Relevant Content":29.1,
+    "Freedom and Openness":0,
+    "Impact and Empowerment":11.1
+  },
+  {
+    "Country":"Senegal",
+    "Country ID":686,
+    "Web Index score":28.4,
+    "Universal Access":17.3,
+    "Relevant Content":21.1,
+    "Freedom and Openness":46.9,
+    "Impact and Empowerment":31.8
+  },
+  {
+    "Country":"Singapore",
+    "Country ID":702,
+    "Web Index score":60.7,
+    "Universal Access":90.1,
+    "Relevant Content":83.1,
+    "Freedom and Openness":17,
+    "Impact and Empowerment":43.1
+  },
+  {
+    "Country":"South Africa",
+    "Country ID":710,
+    "Web Index score":55.8,
+    "Universal Access":53.2,
+    "Relevant Content":46.6,
+    "Freedom and Openness":74.3,
+    "Impact and Empowerment":39.9
+  },
+  {
+    "Country":"Spain",
+    "Country ID":724,
+    "Web Index score":66.8,
+    "Universal Access":73.7,
+    "Relevant Content":58.1,
+    "Freedom and Openness":70.9,
+    "Impact and Empowerment":49.9
+  },
+  {
+    "Country":"Sweden",
+    "Country ID":752,
+    "Web Index score":100,
+    "Universal Access":94.4,
+    "Relevant Content":90.1,
+    "Freedom and Openness":86.1,
+    "Impact and Empowerment":92.2
+  },
+  {
+    "Country":"Switzerland",
+    "Country ID":756,
+    "Web Index score":79.3,
+    "Universal Access":84,
+    "Relevant Content":71.2,
+    "Freedom and Openness":81,
+    "Impact and Empowerment":59.3
+  },
+  {
+    "Country":"Thailand",
+    "Country ID":764,
+    "Web Index score":41.5,
+    "Universal Access":48.1,
+    "Relevant Content":42.4,
+    "Freedom and Openness":33.7,
+    "Impact and Empowerment":39.8
+  },
+  {
+    "Country":"Tunisia",
+    "Country ID":788,
+    "Web Index score":43.6,
+    "Universal Access":40.8,
+    "Relevant Content":40.1,
+    "Freedom and Openness":50,
+    "Impact and Empowerment":39.6
+  },
+  {
+    "Country":"Turkey",
+    "Country ID":792,
+    "Web Index score":30.9,
+    "Universal Access":36.5,
+    "Relevant Content":29,
+    "Freedom and Openness":38.5,
+    "Impact and Empowerment":24.5
+  },
+  {
+    "Country":"Uganda",
+    "Country ID":800,
+    "Web Index score":20.8,
+    "Universal Access":14.5,
+    "Relevant Content":6.1,
+    "Freedom and Openness":48.6,
+    "Impact and Empowerment":22.8
+  },
+  {
+    "Country":"United Arab Emirates",
+    "Country ID":784,
+    "Web Index score":42.7,
+    "Universal Access":56.1,
+    "Relevant Content":76.8,
+    "Freedom and Openness":10.8,
+    "Impact and Empowerment":26.4
+  },
+  {
+    "Country":"United Kingdom Of Great Britain And Northern Ireland",
+    "Country ID":826,
+    "Web Index score":95.6,
+    "Universal Access":86.2,
+    "Relevant Content":100,
+    "Freedom and Openness":73.5,
+    "Impact and Empowerment":87.3
+  },
+  {
+    "Country":"United Republic Of Tanzania",
+    "Country ID":834,
+    "Web Index score":30.6,
+    "Universal Access":28.7,
+    "Relevant Content":19.8,
+    "Freedom and Openness":52.5,
+    "Impact and Empowerment":25.8
+  },
+  {
+    "Country":"United States Of America",
+    "Country ID":840,
+    "Web Index score":95.2,
+    "Universal Access":85.1,
+    "Relevant Content":88,
+    "Freedom and Openness":71,
+    "Impact and Empowerment":100
+  },
+  {
+    "Country":"Uruguay",
+    "Country ID":858,
+    "Web Index score":62,
+    "Universal Access":55.4,
+    "Relevant Content":60.9,
+    "Freedom and Openness":79.9,
+    "Impact and Empowerment":39.2
+  },
+  {
+    "Country":"Venezuela (Bolivarian Republic Of)",
+    "Country ID":862,
+    "Web Index score":37.7,
+    "Universal Access":48.5,
+    "Relevant Content":44.5,
+    "Freedom and Openness":32.9,
+    "Impact and Empowerment":27
+  },
+  {
+    "Country":"Viet Nam",
+    "Country ID":704,
+    "Web Index score":13.8,
+    "Universal Access":30.5,
+    "Relevant Content":23.5,
+    "Freedom and Openness":4.4,
+    "Impact and Empowerment":12.2
+  },
+  {
+    "Country":"Yemen",
+    "Country ID":887,
+    "Web Index score":0,
+    "Universal Access":3.2,
+    "Relevant Content":7,
+    "Freedom and Openness":7.7,
+    "Impact and Empowerment":3.7
+  },
+  {
+    "Country":"Zambia",
+    "Country ID":894,
+    "Web Index score":20.4,
+    "Universal Access":14.6,
+    "Relevant Content":12.1,
+    "Freedom and Openness":45.8,
+    "Impact and Empowerment":18.8
+  },
+  {
+    "Country":"Zimbabwe",
+    "Country ID":716,
+    "Web Index score":10.1,
+    "Universal Access":17.7,
+    "Relevant Content":5.4,
+    "Freedom and Openness":22.8,
+    "Impact and Empowerment":11.2
+  }
+]
