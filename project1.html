@@ -5,117 +5,218 @@
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
 <style>
-body { font-family: "Open Sans"; } div { margin: 30px; }
+body { 
+	font-family: "Open Sans"; 
+}
+
+div { 
+	margin: 30px; 
+}
+
 svg { 
 	border: solid black 1px; 
 	display: block;
 	margin: auto;
 }
-/* The default styles for axis elements stink. What should they be? */
-.axis path {}
-.axis line {}
-p {
-	text-align: center; 
-	font-family: "Courier New", Courier, monospace;
-	font-size: 16px
+
+#project_title {
+	dominant-baseline: central;
+	text-anchor: middle; 
+	fill: black;
+	font-family: "Courier New"; 
 }
 </style>
 </head>
 <body>
 
-<svg height="125" width="1200" style="border:none"> 
-		<text
-		x="600" y="50"
-		dominant-baseline = "central"
-        text-anchor="middle"
-        fill= "black"
-        font-family = "sans-serif"
-        font-size   = "32">World's Web Index Ranking</text>
-        <text
-		x="600" y="100"
-		dominant-baseline = "central"
-        text-anchor="middle"
-        fill= "black"
-        font-family = "Courier New"
-        font-size   = "20">*Countries with no/insufficient data are shaded gray</text>
-     </svg>
+<!--SVG Elements initialized here -->
 
-<p>Index score determined by evaluating Universal Access, Relevant Content, Freedom & Openness, and Impact & Empowerment.</p>
+<svg id="project_title" height="175" width="1200" style="border:none"> 
+		<text x="600" y="50" font-size="32">World's Web Index Ranking</text>
+        <text x="600" y="100" font-size="20">*Countries with no/insufficient data are shaded gray</text>
+        <text x="600" y="150" ffont-size="20">Index score determined by evaluating Universal Access, Relevant Content, Freedom & Openness, and Impact & Empowerment.</text>
+</svg>
 
-<!-- The SVG element will go in here -->
-<!--<div style="width: 100%; margin-left: -20px">-->
-
-	<div id="world_map"></div> <!--style="float: left"-->
-	<p>Index Scores</p>
-	<div style="margin-left: 200px"> <!--style="margin-left: 50px"--> 
-			<svg width="100" height="50" style="border: none; float: left">
-				<rect width="100" height="25" style="fill:#f7fbff;"/>
-				<text x="0" y="40" fill="black" style="font-family: Courier New, Courier, monospace">0 - 9</text>
-			</svg>
-			<svg width="100" height="50" style="border: none; float: left">
-				<rect width="100" height="25" style="fill:#deebf7;"/>
-				<text x="0" y="40" fill="black" style="font-family: Courier New, Courier, monospace">10 - 19</text>
-			</svg>
-			<svg width="100" height="50" style="border: none; float: left">
-				<rect width="100" height="25" style="fill:#c6dbef;"/>
-				<text x="0" y="40" fill="black" style="font-family: Courier New, Courier, monospace">20 - 29</text>
-			</svg>
-			<svg width="100" height="50" style="border: none; float: left">
-				<rect width="100" height="25" style="fill:#9ecae1;"/>
-				<text x="0" y="40" fill="black" style="font-family: Courier New, Courier, monospace">30 - 39</text>
-			</svg>
-			<svg width="100" height="50" style="border: none; float: left">
-				<rect width="100" height="25" style="fill:#6baed6;"/>
-				<text x="0" y="40" fill="black" style="font-family: Courier New, Courier, monospace">40 - 49</text>
-			</svg>
-			<svg width="100" height="50" style="border: none; float: left">
-				<rect width="100" height="25" style="fill:#4292c6;"/>
-				<text x="0" y="40" fill="black" style="font-family: Courier New, Courier, monospace">50 - 59</text>
-			</svg>
-			<svg width="100" height="50" style="border: none; float: left">
-				<rect width="100" height="25" style="fill:#2171b5;"/>
-				<text x="0" y="40" fill="black" style="font-family: Courier New, Courier, monospace">60 - 69</text>
-			</svg>
-			<svg width="100" height="50" style="border: none; float: left">
-				<rect width="100" height="25" style="fill:#08519c;"/>
-				<text x="0" y="40" fill="black" style="font-family: Courier New, Courier, monospace">70 - 79</text>
-			</svg>
-			<svg width="100" height="50" style="border: none; float: left">
-				<rect width="100" height="25" style="fill:#08306b;"/>
-				<text x="0" y="40" fill="black" style="font-family: Courier New, Courier, monospace">80 - 89</text>
-			</svg>
-			<svg width="100" height="50" style="border: none; float: left">
-				<rect width="100" height="25" style="fill:rgb(0, 25, 70);"/>
-				<text x="0" y="40" fill="black" style="font-family: Courier New, Courier, monospace">90 - 100</text>
-			</svg>
-		</div>
-<br><br>
+	<div id="world_map"></div> 
+	<div id="world_legend" style="margin-left: 200px"></div>
 
 <div>
 	<svg height="100" width="1200" style="border:none"> 
-		<text
-		x="600" y="50"
-		dominant-baseline = "central"
-        text-anchor="middle"
-        fill= "black"
-        font-family = "sans-serif"
-        font-size   = "32">Web Index Ranking Versus Education</text>
+		<text x="600" y="50" dominant-baseline="central" text-anchor="middle" fill="black" font-family="sans-serif"
+        	font-size="32">Web Index Ranking Versus Education</text>
      </svg>
- </div>
+</div>
 
-    <div id="canvas"></div>
+<div id="canvas"></div>
 
 <script>
+//Create Map
 var width = 1200,
     height = 620;
 
 var projection = d3.geo.equirectangular().scale(200).translate([width / 2, height / 2]);
 
 var path = d3.geo.path().projection(projection);
-	
+
+//Create Legend for the Map	
 var svg = d3.select("#world_map").append("svg")
     .attr("width", width)
     .attr("height", height);
+
+var map_legend = d3.select("#world_legend").append("svg")
+	.attr("width", 1000)
+	.attr("height", 100)
+	.style("float", "left")
+	.style("border", "none"); 
+
+var legend_title = map_legend.append("text");
+    legend_title.attr("x", 500)
+        .attr("y", 15)
+        .attr("font-family", "Courier New")
+        .attr("fill", "black")
+        .attr("dominant-baseline", "central")
+        .attr("text-anchor", "middle")
+        .text("Index Ranges");
+
+var index_1 = map_legend.append("rect");
+    index_1.attr("x", 0)
+        .attr("y", 30)
+        .attr("width", 100)
+        .attr("height", 25)
+        .style("fill","#f7fbff");
+
+var index_1_name = map_legend.append("text");
+    index_1_name.attr("x", 0)
+      	.attr("y", 70)
+        .attr("font-family", "Courier New")
+        .attr("fill", "black")
+		.text("0 - 9");
+
+var index_2 = map_legend.append("rect");
+    index_2.attr("x", 100)
+        .attr("y", 30)
+        .attr("width", 100)
+        .attr("height", 25)
+        .style("fill","#deebf7");
+
+var index_2_name = map_legend.append("text");
+    index_2_name.attr("x", 100)
+        .attr("y", 70)
+        .attr("font-family", "Courier New")
+        .attr("fill", "black")
+	    .text("10 - 19");
+
+var index_3 = map_legend.append("rect");
+    index_3.attr("x", 200)
+        .attr("y", 30)
+        .attr("width", 100)
+        .attr("height", 25)
+        .style("fill","#c6dbef");
+
+var index_3_name = map_legend.append("text");
+    index_3_name.attr("x", 200)
+   		.attr("y", 70)
+       	.attr("font-family", "Courier New")
+        .attr("fill", "black")
+	    .text("20 - 29");
+
+var index_4 = map_legend.append("rect");
+    index_4.attr("x", 300)
+        .attr("y", 30)
+        .attr("width", 100)
+        .attr("height", 25)
+        .style("fill","#9ecae1");
+
+var index_4_name = map_legend.append("text");
+    index_4_name.attr("x", 300)
+        .attr("y", 70)
+        .attr("font-family", "Courier New")
+        .attr("fill", "black")
+		.text("30 - 39");
+
+var index_5 = map_legend.append("rect");
+    index_5.attr("x", 400)
+        .attr("y", 30)
+        .attr("width", 100)
+        .attr("height", 25)
+        .style("fill","#6baed6");
+
+var index_5_name = map_legend.append("text");
+    index_5_name.attr("x", 400)
+        .attr("y", 70)
+        .attr("font-family", "Courier New")
+        .attr("fill", "black")
+		.text("40 - 49");
+
+var index_6 = map_legend.append("rect");
+    index_6.attr("x", 500)
+        .attr("y", 30)
+        .attr("width", 100)
+        .attr("height", 25)
+        .style("fill","#4292c6");
+
+var index_6_name = map_legend.append("text");
+    index_6_name.attr("x", 500)
+        .attr("y", 70)
+        .attr("font-family", "Courier New")
+        .attr("fill", "black")
+	    .text("50 - 59");
+
+var index_7 = map_legend.append("rect");
+    index_7.attr("x", 600)
+        .attr("y", 30)
+        .attr("width", 100)
+        .attr("height", 25)
+        .style("fill","#2171b5");
+
+var index_7_name = map_legend.append("text");
+    index_7_name.attr("x", 600)
+        .attr("y", 70)
+        .attr("font-family", "Courier New")
+        .attr("fill", "black")
+		.text("60 - 69");
+
+var index_8 = map_legend.append("rect");
+    index_8.attr("x", 700)
+        .attr("y", 30)
+        .attr("width", 100)
+        .attr("height", 25)
+        .style("fill","#08519c");
+
+var index_8_name = map_legend.append("text");
+    index_8_name.attr("x", 700)
+        .attr("y", 70)
+        .attr("font-family", "Courier New")
+        .attr("fill", "black")
+		.text("70 - 79");
+
+var index_9 = map_legend.append("rect");
+    index_9.attr("x", 800)
+        .attr("y", 30)
+        .attr("width", 100)
+        .attr("height", 25)
+        .style("fill","#08306b");
+
+var index_9_name = map_legend.append("text");
+    index_9_name.attr("x", 800)
+        .attr("y", 70)
+        .attr("font-family", "Courier New")
+        .attr("fill", "black")
+	    .text("80 - 89");
+
+var index_10 = map_legend.append("rect");
+    index_10.attr("x", 900)
+        .attr("y", 30)
+        .attr("width", 100)
+        .attr("height", 25)
+        .style("fill","rgb(0, 25, 70)");
+
+var index_10_name = map_legend.append("text");
+    index_10_name.attr("x", 900)
+        .attr("y", 70)
+        .attr("font-family", "Courier New")
+        .attr("fill", "black")
+		.text("90 - 100");
 
 var g = svg.append("g");
 var worldData;
@@ -132,6 +233,7 @@ var worldData;
 	}
 ];*/
 
+//Update country colors on the map
 d3.json("world-50m.json", function(error, world) {
 	worldData = world;
 
@@ -339,7 +441,7 @@ d3.json("world-50m.json", function(error, world) {
 				return "#deebf7"; //Spain
 			}
 			else if (country.id == 752) {
-				return "rgb(0, 25, 70)"; //Sweden do we maybe want to put sweden in a differnet color becasue it has a score of 100? 
+				return "rgb(0, 25, 70)"; //Sweden 
 			}
 			else if (country.id == 756) {
 				return "#08519c"; //Switzerland
@@ -375,7 +477,7 @@ d3.json("world-50m.json", function(error, world) {
 				return "#deebf7"; //Vietnam
 			}
 			else if (country.id == 887) {
-				return "#f7fbff"; //Yemen //should this one be a differet color because it's score is 0? 
+				return "#f7fbff"; //Yemen 
 			}
 			else if (country.id == 894) {
 				return "#c6dbef"; //Zambia
@@ -388,7 +490,7 @@ d3.json("world-50m.json", function(error, world) {
 			} 
 		})
 		.style("stroke", "#cccccc")
-	
+
 	/*for (var i = 0; i < color_array.length; i++) {
 				if (0 <= color_array[i].score <= 9) {
 					return "#f7fbff"; 
@@ -422,32 +524,29 @@ d3.json("world-50m.json", function(error, world) {
 				} 	
 				else {
 					return "rgb(192, 192, 192)";
-				}*/	
+				}*/
 			
 });
-
- var education;
+	//Create Histograms
+	var education;
 		d3.json("new_education.json", function(error, data){
 
-			education = data;
+		education = data;
         
         var svg = d3.select("#canvas").append("svg")
-     	.attr("height",1700)
-     	.attr("width",1200)
-     	.style("border", "none");
+     		.attr("height",1700)
+     		.attr("width",1200)
+     		.style("border", "none");
 
-        
 		var universal = svg.selectAll("rect").data(education).enter().append("rect");
-		universal.attr("x", function(d){return (250+210*((d.edurank-1)%5))})
-		         .attr("y", function(d){return 100+150*(Math.floor((d.edurank-1)/5)) - (d.Universal)})
+			universal.attr("x", function(d){return (250+210*((d.edurank-1)%5))})
+		    .attr("y", function(d){return 100+150*(Math.floor((d.edurank-1)/5)) - (d.Universal)})
 		         .attr("height", function(d){return (d.Universal)})
 		         .attr("width", 15)
 		         .style("fill", function(d){
 		         	if (d.Universal<62.95) {return "#99d8c9";}
 		         	else {return "#2ca25f";}
 		         });
-
-		
 		
 		var relevant = svg.selectAll("rectr").data(education).enter().append("rect");
 		relevant.attr("x", function(d){return (265+210*((d.edurank-1)%5))})
@@ -458,8 +557,6 @@ d3.json("world-50m.json", function(error, world) {
 		         	if (d.Relevant<64.62) {return "#9ecae1";}
 		         	else {return "#3182bd";}
 		         });
-
-		
 
 	    var freedom = svg.selectAll("rectf").data(education).enter().append("rect");
 		freedom.attr("x", function(d){return (280+210*((d.edurank-1)%5))})
@@ -481,7 +578,6 @@ d3.json("world-50m.json", function(error, world) {
 		         	else {return "#e6550d";}
 		         });
 
-
 		var country = svg.selectAll("text").data(education).enter().append("text");
 		country.attr("x", function(d){return 280+210*((d.edurank-1)%5)})
 		       .attr("y", function(d){return 125+150*(Math.floor((d.edurank-1)/5))})
@@ -492,13 +588,13 @@ d3.json("world-50m.json", function(error, world) {
 		       .attr("dominant-baseline","central") 
 		       .attr("text-anchor","middle"); 
 
-
-		  /*Legend*/
+		//Create Legend for Histograms 
         var legendUniversalRL = svg.append("rect");
         legendUniversalRL.attr("x", 25)
                         .attr("y", 55)
                         .attr("width", 50)
                         .attr("height", 25)
+          
                         .style("fill","#2ca25f");
         var legendUniversalRR = svg.append("rect");
         legendUniversalRR.attr("x", 75)
@@ -506,6 +602,7 @@ d3.json("world-50m.json", function(error, world) {
                         .attr("width", 50)
                         .attr("height", 25)
                         .style("fill","#99d8c9");
+                        
         var UniversalT = svg.append("text");
         UniversalT.attr("x", 15)
         		  .attr("y", 40)
@@ -516,19 +613,20 @@ d3.json("world-50m.json", function(error, world) {
 		          .attr("text-anchor","middle")
 		          .text("UA");
 
-
 		var legendRelevantRL = svg.append("rect");
         legendRelevantRL.attr("x", 25)
                         .attr("y", 125)
                         .attr("width", 50)
                         .attr("height", 25)
                         .style("fill","#3182bd");
+        
         var legendRelevantRR = svg.append("rect");
         legendRelevantRR.attr("x", 75)
                         .attr("y", 125)
                         .attr("width", 50)
                         .attr("height", 25)
                         .style("fill","#9ecae1");
+        
         var RelevantT = svg.append("text");
         RelevantT.attr("x", 15)
         		  .attr("y", 110)
@@ -538,7 +636,6 @@ d3.json("world-50m.json", function(error, world) {
 		          .attr("dominant-baseline","central") 
 		          .attr("text-anchor","middle")
 		          .text("RC");
-
 
 	    var legendFreedomRL = svg.append("rect");
         legendFreedomRL.attr("x", 25)
@@ -552,6 +649,7 @@ d3.json("world-50m.json", function(error, world) {
                         .attr("width", 50)
                         .attr("height", 25)
                         .style("fill","#fa9fb5");
+        
         var FreedomT = svg.append("text");
         FreedomT.attr("x", 15)
         		  .attr("y", 180)
@@ -574,6 +672,7 @@ d3.json("world-50m.json", function(error, world) {
                         .attr("width", 50)
                         .attr("height", 25)
                         .style("fill","#fdae6b");
+       
         var ImpactT = svg.append("text");
         ImpactT.attr("x", 15)
         		  .attr("y", 250)
@@ -583,9 +682,6 @@ d3.json("world-50m.json", function(error, world) {
 		          .attr("dominant-baseline","central") 
 		          .attr("text-anchor","middle")
 		          .text("IE");
-
-
-
 
          var noteAvgA = svg.append("text");
          noteAvgA.attr("x", 50)
@@ -608,8 +704,6 @@ d3.json("world-50m.json", function(error, world) {
 		          .attr("text-anchor","middle")
 		          .text("Average");
 
-
-
 		 var noteAvgB = svg.append("text");
         noteAvgB.attr("x", 100)
         		  .attr("y", 305)
@@ -620,7 +714,6 @@ d3.json("world-50m.json", function(error, world) {
 		          .attr("text-anchor","middle")
 		          .text("Below");
 
-
 		var noteAvgBb = svg.append("text");
         noteAvgBb.attr("x", 105)
         		  .attr("y", 319)
@@ -630,8 +723,6 @@ d3.json("world-50m.json", function(error, world) {
 		          .attr("dominant-baseline","central") 
 		          .attr("text-anchor","middle")
 		          .text("Average");
-
-		
 
   	    var UA = svg.append("text");
             UA.attr("x", 10)
@@ -648,6 +739,7 @@ d3.json("world-50m.json", function(error, world) {
                   .attr("font-size", "12px")
                   .attr("fill", "black")
 		          .text("RC: Relevant Content");
+		
 		var FO = svg.append("text");
              FO.attr("x", 10)
         		  .attr("y", 395)
@@ -655,6 +747,7 @@ d3.json("world-50m.json", function(error, world) {
                   .attr("font-size", "12px")
                   .attr("fill", "black")
                   .text("FO: Freedom and Openning");
+		
 		var IE = svg.append("text");
              IE.attr("x", 10)
         		  .attr("y", 410)
@@ -681,11 +774,7 @@ d3.json("world-50m.json", function(error, world) {
                   .attr("dominant-baseline","central") 
 		          .attr("text-anchor","middle")
 		          .text("Data from database: Education Statistics: Education Attainment & 2013 World Wide Web Foundation");
-		 
-
-		         			
-		});
+	});
 </script>
-
 </body>
 </html>
