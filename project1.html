@@ -23,7 +23,7 @@ svg {
 	dominant-baseline: central;
 	text-anchor: middle; 
 	fill: black;
-	font-family: "Courier New"; 
+	font-family: "sans-serif"; 
 }
 </style>
 </head>
@@ -31,28 +31,35 @@ svg {
 
 <!--SVG Elements initialized here -->
 
-<svg id="project_title" height="175" width="1200" style="border:none"> 
-		<text x="600" y="50" font-size="32">World's Web Index Ranking</text>
-        <text x="600" y="100" font-size="20">*Countries with no/insufficient data are shaded gray</text>
-        <text x="600" y="150" ffont-size="20">Index score determined by evaluating Universal Access, Relevant Content, Freedom & Openness, and Impact & Empowerment.</text>
+<svg id="project_title" height="140" width="1200" style="border:none; float: middle"> 
+		<text x="600" y="50" font-family="sans-serif" font-size="32">World's Web Index Ranking</text>
+		<text x="600" y="80" font-family="sans-serif" font-size="17">The Web Index Ranking represents a country's devotion to web technologies and the use, development, and openness of web applications</text>
+		<text x="600" y="105" font-family="sans-serif" font-size="16">This score is determined by evaluating Universal Access, Relevant Content, Freedom & Openness, and Impact & Empowerment</text>
+        <text x="600" y="135" font-family="sans-serif" font-size="16">*Countries with no/insufficient data are shaded gray</text>
 </svg>
 
-	<div id="world_map"></div> 
+	<div id="world_map" style="float: middle"></div> 
 	<div id="world_legend" style="margin-left: 200px"></div>
 
 <div>
-	<svg height="100" width="1200" style="border:none"> 
+	<svg height="145" width="1200" style="border:none"> 
 		<text x="600" y="50" dominant-baseline="central" text-anchor="middle" fill="black" font-family="sans-serif"
-        	font-size="32">Web Index Ranking Versus Education</text>
+        	font-size="32">Web Index Ranking Ordered By Education*</text>
+        <text x="600" y="90" dominant-baseline="central" text-anchor="middle" fill="black" font-family="sans-serif"
+        	font-size="16">Countries selected are outliers and representatives in different geographical locations</text>
+        <text x="600" y="115" dominant-baseline="central" text-anchor="middle" fill="black" font-family="sans-serif"
+        	font-size="14">i.e. Countries with high education percentages & low index scores and vice versa.</text>
+        <text x="600" y="135" dominant-baseline="central" text-anchor="middle" fill="black" font-family="sans-serif"
+        	font-size="13">*Education is defined as the percentage of population age 15+ who have completed secondary education</text>
      </svg>
 </div>
 
-<div id="canvas"></div>
+<div id="canvas" style="border:none"></div>
 
 <script>
 //Create Map
-var width = 1200,
-    height = 620;
+var width = 1275,
+    height = 500;
 
 var projection = d3.geo.equirectangular().scale(200).translate([width / 2, height / 2]);
 
@@ -72,7 +79,7 @@ var map_legend = d3.select("#world_legend").append("svg")
 var legend_title = map_legend.append("text");
     legend_title.attr("x", 500)
         .attr("y", 15)
-        .attr("font-family", "Courier New")
+        .attr("font-family", "sans-serif")
         .attr("fill", "black")
         .attr("dominant-baseline", "central")
         .attr("text-anchor", "middle")
@@ -88,7 +95,7 @@ var index_1 = map_legend.append("rect");
 var index_1_name = map_legend.append("text");
     index_1_name.attr("x", 0)
       	.attr("y", 70)
-        .attr("font-family", "Courier New")
+        .attr("font-family", "sans-serif")
         .attr("fill", "black")
 		.text("0 - 9");
 
@@ -102,7 +109,7 @@ var index_2 = map_legend.append("rect");
 var index_2_name = map_legend.append("text");
     index_2_name.attr("x", 100)
         .attr("y", 70)
-        .attr("font-family", "Courier New")
+        .attr("font-family", "sans-serif")
         .attr("fill", "black")
 	    .text("10 - 19");
 
@@ -116,7 +123,7 @@ var index_3 = map_legend.append("rect");
 var index_3_name = map_legend.append("text");
     index_3_name.attr("x", 200)
    		.attr("y", 70)
-       	.attr("font-family", "Courier New")
+       	.attr("font-family", "sans-serif")
         .attr("fill", "black")
 	    .text("20 - 29");
 
@@ -130,7 +137,7 @@ var index_4 = map_legend.append("rect");
 var index_4_name = map_legend.append("text");
     index_4_name.attr("x", 300)
         .attr("y", 70)
-        .attr("font-family", "Courier New")
+        .attr("font-family", "sans-serif")
         .attr("fill", "black")
 		.text("30 - 39");
 
@@ -144,7 +151,7 @@ var index_5 = map_legend.append("rect");
 var index_5_name = map_legend.append("text");
     index_5_name.attr("x", 400)
         .attr("y", 70)
-        .attr("font-family", "Courier New")
+        .attr("font-family", "sans-serif")
         .attr("fill", "black")
 		.text("40 - 49");
 
@@ -158,7 +165,7 @@ var index_6 = map_legend.append("rect");
 var index_6_name = map_legend.append("text");
     index_6_name.attr("x", 500)
         .attr("y", 70)
-        .attr("font-family", "Courier New")
+        .attr("font-family", "sans-serif")
         .attr("fill", "black")
 	    .text("50 - 59");
 
@@ -172,7 +179,7 @@ var index_7 = map_legend.append("rect");
 var index_7_name = map_legend.append("text");
     index_7_name.attr("x", 600)
         .attr("y", 70)
-        .attr("font-family", "Courier New")
+        .attr("font-family", "sans-serif")
         .attr("fill", "black")
 		.text("60 - 69");
 
@@ -186,7 +193,7 @@ var index_8 = map_legend.append("rect");
 var index_8_name = map_legend.append("text");
     index_8_name.attr("x", 700)
         .attr("y", 70)
-        .attr("font-family", "Courier New")
+        .attr("font-family", "sans-serif")
         .attr("fill", "black")
 		.text("70 - 79");
 
@@ -200,7 +207,7 @@ var index_9 = map_legend.append("rect");
 var index_9_name = map_legend.append("text");
     index_9_name.attr("x", 800)
         .attr("y", 70)
-        .attr("font-family", "Courier New")
+        .attr("font-family", "sans-serif")
         .attr("fill", "black")
 	    .text("80 - 89");
 
@@ -214,36 +221,73 @@ var index_10 = map_legend.append("rect");
 var index_10_name = map_legend.append("text");
     index_10_name.attr("x", 900)
         .attr("y", 70)
-        .attr("font-family", "Courier New")
+        .attr("font-family", "sans-serif")
         .attr("fill", "black")
 		.text("90 - 100");
 
 var g = svg.append("g");
+
 var worldData;
-
-/*var color_array = [
-	{
-		"id": 32, 
-		"score": 55.2
-	},
-
-	{
-		"id": 36,
-		"score": 86.4, 
-	}
-];*/
 
 //Update country colors on the map
 d3.json("world-50m.json", function(error, world) {
+	
 	worldData = world;
 
-	g.selectAll("path") 
-	.data(topojson.feature(world, world.objects.countries).features)
-	.enter().append("path")
+	/*d3.csv("web_ranking.csv", function(error, rows) {
+
+		webRanking = d3.map(rows, function(row) {
+			return Number(row.id);
+		});*/
+
+	g.selectAll("path").data(topojson.feature(world, world.objects.countries).features)
+		.enter().append("path")
 		.attr("d", path)
-		.style("fill", function(country) { 
-			if (country.id == 840) {	//is it ok to manually input every country? 
-				return "rgb(0, 25, 70)"; //US 
+		.style("stroke", "#cccccc")
+		.style("fill", function(country) {
+
+			/*var countryData = webRanking.get(country.id);
+
+			if (countryData) {
+				if (0 <= countryData.web_index_score < 10) {
+					return "#f7fbff"; 
+				}
+				else if (10 <= countryData.web_index_score < 20) {
+					return "#deebf7"; 
+				}
+				else if (20 <= countryData.web_index_score < 30) {
+					return "#c6dbef"; 
+				}	
+				else if (30 <= countryData.web_index_score < 40) {
+					return "#9ecae1";
+				}	
+				else if (40 <= countryData.web_index_score < 50) {
+					return "#6baed6"; 
+				}
+				else if (50 <= countryData.web_index_score < 60) {
+					return "#4292c6"; 
+				}
+				else if (60 <= countryData.web_index_score < 70) {
+					return "#2171b5"; 
+				}
+				else if (70 <= country[countryData.web_index_score] < 80) {
+					return "#08519c"; 
+				}
+				else if (80 <= country[countryData].web_index_score < 90) {
+					return "#08306b"; 
+				}	
+				else if (90 <= country[countryData].web_index_score <= 100) {
+					return "rgb(0, 25, 70)";
+				} 	
+				else {
+					return "rgb(192, 192, 192)";
+				}
+			}
+		})	
+	})*/
+
+			if (country.id == 840) { 
+			 	return "rgb(0, 25, 70)"; //US 
 			}
 			else if (country.id == 32 ) { 
 				return "#6baed6"; //Argentina
@@ -297,7 +341,7 @@ d3.json("world-50m.json", function(error, world) {
 				return "#08519c"; //Czech Republic 
 			}
 			else if (country.id == 208) {
-				return "rgb(0, 25, 70)"; //Denmark
+			 	return "rgb(0, 25, 70)"; //Denmark
 			}
 			else if (country.id == 218) {
 				return "#6baed6"; //Ecuador
@@ -312,10 +356,13 @@ d3.json("world-50m.json", function(error, world) {
 				return "#f7fbff"; //Ethiopia
 			}
 			else if (country.id == 246) {
-				return "rgb(0, 25, 70)"; //Finland
+			    return "rgb(0, 25, 70)"; //Finland
 			}
 			else if (country.id == 250) {
-				return "rgb(0, 25, 70)"; //France
+			 	return "rgb(0, 25, 70)"; //France, this also shades in French Guiana
+			}
+			else if (country.id == 254) {
+				return("red");
 			}
 			else if (country.id == 276) {
 				return "#08306b"; //Germany
@@ -329,9 +376,9 @@ d3.json("world-50m.json", function(error, world) {
 			else if (country.id == 348) {
 				return "#6baed6"; //Hungary
 			}
-			else if (country.id == 352) {
-				return "rgb(0, 25, 70)"; //Iceland
-			}
+			 else if (country.id == 352) {
+			 	return "rgb(0, 25, 70)"; //Iceland
+		    }
 			else if (country.id == 356) {
 				return "#9ecae1"; //India
 			}
@@ -490,77 +537,45 @@ d3.json("world-50m.json", function(error, world) {
 			} 
 		})
 		.style("stroke", "#cccccc")
-
-	/*for (var i = 0; i < color_array.length; i++) {
-				if (0 <= color_array[i].score <= 9) {
-					return "#f7fbff"; 
-				}
-				else if (10 <= color_array[i].score <= 19) {
-					return "#deebf7"; 
-				}
-				else if (20 <= color_array[i].score <= 29) {
-					return "#c6dbef"; 
-				}	
-				else if (30 <= color_array[i].score <= 39) {
-					return "#9ecae1";
-				}	
-				else if (40 <= color_array[i].score <= 49) {
-					return "#6baed6"; 
-				}
-				else if (50 <= color_array[i].score <= 59) {
-					return "#4292c6"; 
-				}
-				else if (60 <= color_array[i].score <= 69) {
-					return "#2171b5"; 
-				}
-				else if (70 <= color_array[i].score <= 79) {
-					return "#08519c"; 
-				}
-				else if (80 <= color_array[i].score <= 89) {
-					return "#08306b"; 
-				}	
-				else if (90 <= color_array[i].score <= 100) {
-					return "rgb(0, 25, 70)";
-				} 	
-				else {
-					return "rgb(192, 192, 192)";
-				}*/
-			
 });
 	//Create Histograms
-	var education;
+        var education;
 		d3.json("new_education.json", function(error, data){
 
-		education = data;
+			education = data;
         
-        var svg = d3.select("#canvas").append("svg")
-     		.attr("height",1700)
-     		.attr("width",1200)
-     		.style("border", "none");
+        var svg = d3.select("#canvas").append("svg").style("border", "none")
+     	.attr("height",1300)
+     	.attr("width",1200);
 
+        
 		var universal = svg.selectAll("rect").data(education).enter().append("rect");
-			universal.attr("x", function(d){return (250+210*((d.edurank-1)%5))})
-		    .attr("y", function(d){return 100+150*(Math.floor((d.edurank-1)/5)) - (d.Universal)})
+		universal.attr("x", function(d){return (250+210*((d.edurank-1)%5))})
+		         .attr("y", function(d){return 120+170*(Math.floor((d.edurank-1)/5)) - (d.Universal)})
 		         .attr("height", function(d){return (d.Universal)})
 		         .attr("width", 15)
 		         .style("fill", function(d){
 		         	if (d.Universal<62.95) {return "#99d8c9";}
 		         	else {return "#2ca25f";}
 		         });
+
+		
 		
 		var relevant = svg.selectAll("rectr").data(education).enter().append("rect");
 		relevant.attr("x", function(d){return (265+210*((d.edurank-1)%5))})
-		         .attr("y", function(d){return 100+150*(Math.floor((d.edurank-1)/5)) - (d.Relevant)})
+		         .attr("y", function(d){return 120+170*(Math.floor((d.edurank-1)/5)) - (d.Relevant)})
 		         .attr("height", function(d){return (d.Relevant)})
 		         .attr("width", 15)
 		         .style("fill", function(d){
-		         	if (d.Relevant<64.62) {return "#9ecae1";}
-		         	else {return "#3182bd";}
+		         	if (d.Relevant<64.62) {return "#bcbddc";}
+		         	else {return "#756bb1";}
 		         });
+
+		
 
 	    var freedom = svg.selectAll("rectf").data(education).enter().append("rect");
 		freedom.attr("x", function(d){return (280+210*((d.edurank-1)%5))})
-		         .attr("y", function(d){return 100+150*(Math.floor((d.edurank-1)/5)) - (d.Freedom)})
+		         .attr("y", function(d){return 120+170*(Math.floor((d.edurank-1)/5)) - (d.Freedom)})
 		         .attr("height", function(d){return (d.Freedom)})
 		         .attr("width", 15)
 		         .style("fill", function(d){
@@ -570,31 +585,59 @@ d3.json("world-50m.json", function(error, world) {
 
 		var impact = svg.selectAll("recti").data(education).enter().append("rect");
 		impact.attr("x", function(d){return (295+210*((d.edurank-1)%5))})
-		         .attr("y", function(d){return 100+150*(Math.floor((d.edurank-1)/5)) - (d.Impact)})
+		         .attr("y", function(d){return 120+170*(Math.floor((d.edurank-1)/5)) - (d.Impact)})
 		         .attr("height", function(d){return (d.Impact)})
 		         .attr("width", 15)
 		         .style("fill", function(d){
 		         	if (d.Impact<48.18) {return "#fdae6b";}
 		         	else {return "#e6550d";}
 		         });
+            
+    
+
+    var scaleline100 = svg.selectAll("line").data(education).enter().append("line");
+    scaleline100.attr("x1", function(d){return (240+210*((d.edurank-1)%5))})
+         .attr("y1", function(d){return 20+ 170*(Math.floor((d.edurank-1)/5))})
+         .attr("x2", function(d){return (250+210*((d.edurank-1)%5))+70})
+         .attr("y2", function(d){return 20+170*(Math.floor((d.edurank-1)/5))})
+         .attr("stroke", "#f03b20")
+         .attr("stroke-width", 2);
+
+    var scaleline50 = svg.selectAll("line1").data(education).enter().append("line");
+    scaleline50.attr("x1", function(d){return (240+210*((d.edurank-1)%5))})
+         .attr("y1", function(d){return 70+ 170*(Math.floor((d.edurank-1)/5))})
+         .attr("x2", function(d){return (250+210*((d.edurank-1)%5))+70})
+         .attr("y2", function(d){return 70+170*(Math.floor((d.edurank-1)/5))})
+         .attr("stroke", "#636363")
+         .attr("stroke-width", 2);
 
 		var country = svg.selectAll("text").data(education).enter().append("text");
 		country.attr("x", function(d){return 280+210*((d.edurank-1)%5)})
-		       .attr("y", function(d){return 125+150*(Math.floor((d.edurank-1)/5))})
+		       .attr("y", function(d){return 145+170*(Math.floor((d.edurank-1)/5))})
 		       .text(function(d){return d.Country})
 		       .attr("font-family", "sans-serif")
-               .attr("font-size", "20px")
+               .attr("font-size", "13px")
                .attr("fill", "black")
 		       .attr("dominant-baseline","central") 
 		       .attr("text-anchor","middle"); 
 
-		//Create Legend for Histograms 
+        var perc = svg.selectAll("text1").data(education).enter().append("text");
+       perc.attr("x", function(d){return 280+210*((d.edurank-1)%5)})
+           .attr("y", function(d){return 158+170*(Math.floor((d.edurank-1)/5))})
+           .text(function(d){return String(d.AVG) + "%"})
+           .attr("font-family", "sans-serif")
+               .attr("font-size", "10px")
+               .attr("fill", "black")
+           .attr("dominant-baseline","central") 
+           .attr("text-anchor","middle"); 
+
+
+		  /*Legend*/
         var legendUniversalRL = svg.append("rect");
         legendUniversalRL.attr("x", 25)
                         .attr("y", 55)
                         .attr("width", 50)
                         .attr("height", 25)
-          
                         .style("fill","#2ca25f");
         var legendUniversalRR = svg.append("rect");
         legendUniversalRR.attr("x", 75)
@@ -602,7 +645,6 @@ d3.json("world-50m.json", function(error, world) {
                         .attr("width", 50)
                         .attr("height", 25)
                         .style("fill","#99d8c9");
-                        
         var UniversalT = svg.append("text");
         UniversalT.attr("x", 15)
         		  .attr("y", 40)
@@ -613,20 +655,19 @@ d3.json("world-50m.json", function(error, world) {
 		          .attr("text-anchor","middle")
 		          .text("UA");
 
+
 		var legendRelevantRL = svg.append("rect");
         legendRelevantRL.attr("x", 25)
                         .attr("y", 125)
                         .attr("width", 50)
                         .attr("height", 25)
-                        .style("fill","#3182bd");
-        
+                        .style("fill","#756bb1");
         var legendRelevantRR = svg.append("rect");
         legendRelevantRR.attr("x", 75)
                         .attr("y", 125)
                         .attr("width", 50)
                         .attr("height", 25)
-                        .style("fill","#9ecae1");
-        
+                        .style("fill","#bcbddc");
         var RelevantT = svg.append("text");
         RelevantT.attr("x", 15)
         		  .attr("y", 110)
@@ -636,6 +677,7 @@ d3.json("world-50m.json", function(error, world) {
 		          .attr("dominant-baseline","central") 
 		          .attr("text-anchor","middle")
 		          .text("RC");
+
 
 	    var legendFreedomRL = svg.append("rect");
         legendFreedomRL.attr("x", 25)
@@ -649,7 +691,6 @@ d3.json("world-50m.json", function(error, world) {
                         .attr("width", 50)
                         .attr("height", 25)
                         .style("fill","#fa9fb5");
-        
         var FreedomT = svg.append("text");
         FreedomT.attr("x", 15)
         		  .attr("y", 180)
@@ -672,7 +713,6 @@ d3.json("world-50m.json", function(error, world) {
                         .attr("width", 50)
                         .attr("height", 25)
                         .style("fill","#fdae6b");
-       
         var ImpactT = svg.append("text");
         ImpactT.attr("x", 15)
         		  .attr("y", 250)
@@ -682,6 +722,9 @@ d3.json("world-50m.json", function(error, world) {
 		          .attr("dominant-baseline","central") 
 		          .attr("text-anchor","middle")
 		          .text("IE");
+
+
+
 
          var noteAvgA = svg.append("text");
          noteAvgA.attr("x", 50)
@@ -694,7 +737,7 @@ d3.json("world-50m.json", function(error, world) {
 		          .text("Above");
 
 
-		var noteAvgAa = svg.append("text");
+		    var noteAvgAa = svg.append("text");
          noteAvgAa.attr("x", 45)
         		  .attr("y", 319)
         		  .attr("font-family", "sans-serif")
@@ -703,6 +746,8 @@ d3.json("world-50m.json", function(error, world) {
 		          .attr("dominant-baseline","central") 
 		          .attr("text-anchor","middle")
 		          .text("Average");
+
+
 
 		 var noteAvgB = svg.append("text");
         noteAvgB.attr("x", 100)
@@ -714,6 +759,7 @@ d3.json("world-50m.json", function(error, world) {
 		          .attr("text-anchor","middle")
 		          .text("Below");
 
+
 		var noteAvgBb = svg.append("text");
         noteAvgBb.attr("x", 105)
         		  .attr("y", 319)
@@ -724,9 +770,42 @@ d3.json("world-50m.json", function(error, world) {
 		          .attr("text-anchor","middle")
 		          .text("Average");
 
+    var noteHundred =  svg.append("text");
+        noteHundred.attr("x", 10)
+              .attr("y", 365)
+              .attr("font-family", "sans-serif")
+                  .attr("font-size", "12px")
+                  .attr("fill", "black")
+              .text("100 Score");
+
+    var noteFifty =  svg.append("text");
+        noteFifty.attr("x", 10)
+              .attr("y", 385)
+              .attr("font-family", "sans-serif")
+                  .attr("font-size", "12px")
+                  .attr("fill", "black")
+             .text("50 Score");
+
+    var hundred = svg.append("line");
+        hundred.attr("x1", 80 )
+              .attr("y1", 360)
+              .attr("x2", 140)
+              .attr("y2",360)
+              .attr("stroke", "#f03b20")
+              .attr("stroke-width", 2);
+
+
+    var fifty = svg.append("line");
+        fifty.attr("x1", 80 )
+              .attr("y1", 380)
+              .attr("x2", 140)
+              .attr("y2",380)
+              .attr("stroke", "#636363")
+              .attr("stroke-width", 2);
+
   	    var UA = svg.append("text");
             UA.attr("x", 10)
-        		  .attr("y", 365)
+        		  .attr("y", 425)
         		  .attr("font-family", "sans-serif")
                   .attr("font-size", "12px")
                   .attr("fill", "black")
@@ -734,47 +813,43 @@ d3.json("world-50m.json", function(error, world) {
 
 		var RC = svg.append("text");
              RC.attr("x", 10)
-        		  .attr("y", 380)
+        		  .attr("y", 440)
         		  .attr("font-family", "sans-serif")
                   .attr("font-size", "12px")
                   .attr("fill", "black")
 		          .text("RC: Relevant Content");
-		
 		var FO = svg.append("text");
              FO.attr("x", 10)
-        		  .attr("y", 395)
+        		  .attr("y", 455)
         		  .attr("font-family", "sans-serif")
                   .attr("font-size", "12px")
                   .attr("fill", "black")
                   .text("FO: Freedom and Openning");
-		
 		var IE = svg.append("text");
              IE.attr("x", 10)
-        		  .attr("y", 410)
+        		  .attr("y", 470)
         		  .attr("font-family", "sans-serif")
                   .attr("font-size", "12px")
                   .attr("fill", "black")
 		          .text("IE: Impact and Empowerment");
 
-		var NOTE = svg.append("text");
-             NOTE.attr("x", 700)
-        		  .attr("y", 1600)
-        		  .attr("font-family", "sans-serif")
-                  .attr("font-size", "12px")
-                  .attr("fill", "black")
-                  .attr("dominant-baseline","central") 
-		          .attr("text-anchor","middle")
-		          .text("*NOTE: The order of countries in this graph is based on the percentage of population age 15+ with completed secondary schooling.");
+		
         var NOTEa = svg.append("text");
              NOTEa.attr("x", 700)
-        		  .attr("y", 1620)
+        		  .attr("y", 1050)
         		  .attr("font-family", "sans-serif")
-                  .attr("font-size", "12px")
+                  .attr("font-size", "14px")
                   .attr("fill", "black")
                   .attr("dominant-baseline","central") 
 		          .attr("text-anchor","middle")
-		          .text("Data from database: Education Statistics: Education Attainment & 2013 World Wide Web Foundation");
-	});
+		          .text("Source: Education Attainment & 2013 World Wide Web Foundation");
+		 
+
+		         			
+		});
+</script>
+</body>
+</html>
 </script>
 </body>
 </html>
