@@ -236,11 +236,11 @@ d3.json("world-50m.json", function(error, world) {
 	
 	worldData = world;
 
-	/*d3.csv("web_ranking.csv", function(error, rows) {
+	d3.csv("web_ranking.csv", function(error, rows) {
 
 		webRanking = d3.map(rows, function(row) {
 			return Number(row.id);
-		});*/
+		});
 
 	g.selectAll("path").data(topojson.feature(world, world.objects.countries).features)
 		.enter().append("path")
@@ -248,297 +248,45 @@ d3.json("world-50m.json", function(error, world) {
 		.style("stroke", "#cccccc")
 		.style("fill", function(country) {
 
-			/*var countryData = webRanking.get(country.id);
+			var countryData = webRanking.get(country.id);
 
 			if (countryData) {
-				if (0 <= countryData.web_index_score < 10) {
+				if (countryData.web_index_score >= 0 && countryData.web_index_score < 10) {
 					return "#f7fbff"; 
 				}
-				else if (10 <= countryData.web_index_score < 20) {
+				else if (countryData.web_index_score >= 10 && countryData.web_index_score < 20) {
 					return "#deebf7"; 
 				}
-				else if (20 <= countryData.web_index_score < 30) {
+				else if (countryData.web_index_score >= 20 && countryData.web_index_score < 30) {
 					return "#c6dbef"; 
 				}	
-				else if (30 <= countryData.web_index_score < 40) {
+				else if (countryData.web_index_score >= 30 && countryData.web_index_score < 40) {
 					return "#9ecae1";
 				}	
-				else if (40 <= countryData.web_index_score < 50) {
+				else if (countryData.web_index_score >= 40 && countryData.web_index_score < 50) {
 					return "#6baed6"; 
 				}
-				else if (50 <= countryData.web_index_score < 60) {
+				else if (countryData.web_index_score >= 50 && countryData.web_index_score < 60) {
 					return "#4292c6"; 
 				}
-				else if (60 <= countryData.web_index_score < 70) {
+				else if (countryData.web_index_score >= 60 && countryData.web_index_score < 70) {
 					return "#2171b5"; 
 				}
-				else if (70 <= country[countryData.web_index_score] < 80) {
+				else if (countryData.web_index_score >= 70 && countryData.web_index_score < 80) {
 					return "#08519c"; 
 				}
-				else if (80 <= country[countryData].web_index_score < 90) {
+				else if (countryData.web_index_score >= 80 && countryData.web_index_score < 90) {
 					return "#08306b"; 
 				}	
-				else if (90 <= country[countryData].web_index_score <= 100) {
+				else if (countryData.web_index_score >= 90 && countryData.web_index_score <= 100) {
 					return "rgb(0, 25, 70)";
 				} 	
-				else {
-					return "rgb(192, 192, 192)";
-				}
-			}
-		})	
-	})*/
-
-			if (country.id == 840) { 
-			 	return "rgb(0, 25, 70)"; //US 
-			}
-			else if (country.id == 32 ) { 
-				return "#6baed6"; //Argentina
-			}
-			else if (country.id == 36 ) {
-				return "#08519c"; //Australia 
-			}
-			else if (country.id == 40 ) { 
-				return "#08519c"; //Austria
-			}
-			else if (country.id == 48) { 
-				return "#9ecae1"; //Bahrain
-			}
-			else if (country.id == 50) {
-				return "#c6dbef"; //Bangladesh
-			}
-			else if (country.id == 56) {
-				return "#08519c"; //Belgium
-			}
-			else if (country.id == 204) {
-				return "#deebf7"; //Benin
-			}
-			else if (country.id == 72) {
-				return "#deebf7"; //Botswana
-			}
-			else if (country.id == 76) {
-				return "#4292c6"; //Brazil
-			}
-			else if (country.id == 854) {
-				return "#deebf7"; //Burkina Faso
-			}
-			else if (country.id == 120) {
-				return "#deebf7"; //Cameroon 
-			}
-			else if (country.id == 124) {
-				return "#08306b"; //Canada
-			}
-			else if (country.id == 152) {
-				return "#2171b5"; //Chile
-			}
-			else if (country.id == 156) {
-				return "#9ecae1"; //China
-			}
-			else if (country.id == 170) {
-				return "#2171b5"; //Colombia
-			}
-			else if (country.id == 188) {
-				return "#4292c6"; //Costa Rica
-			}
-			else if (country.id == 203) {
-				return "#08519c"; //Czech Republic 
-			}
-			else if (country.id == 208) {
-			 	return "rgb(0, 25, 70)"; //Denmark
-			}
-			else if (country.id == 218) {
-				return "#6baed6"; //Ecuador
-			}
-			else if (country.id == 818) {
-				return "#c6dbef"; //Egypt
-			}
-			else if (country.id == 233) {
-				return "#08519"; //Estonia 
-			}
-			else if (country.id == 231) {
-				return "#f7fbff"; //Ethiopia
-			}
-			else if (country.id == 246) {
-			    return "rgb(0, 25, 70)"; //Finland
-			}
-			else if (country.id == 250) {
-			 	return "rgb(0, 25, 70)"; //France, this also shades in French Guiana
-			}
-			else if (country.id == 254) {
-				return("red");
-			}
-			else if (country.id == 276) {
-				return "#08306b"; //Germany
-			}
-			else if (country.id == 288) {
-				return "#9ecae1"; //Ghana
-			}
-			else if (country.id == 300) {
-				return "#08519c"; //Greece
-			}
-			else if (country.id == 348) {
-				return "#6baed6"; //Hungary
-			}
-			 else if (country.id == 352) {
-			 	return "rgb(0, 25, 70)"; //Iceland
-		    }
-			else if (country.id == 356) {
-				return "#9ecae1"; //India
-			}
-			else if (country.id == 360) {
-				return "#9ecae1"; //Indonesia
-			}
-			else if (country.id == 372) {
-				return "#08419c"; //Ireland
-			}
-			else if (country.id == 376) {
-				return "#08419c"; //Israel
-			}
-			else if (country.id == 380) {
-				return "#08419c"; //Italy
-			}
-			else if (country.id == 388) {
-				return "#6baed6"; //Jamaica
-			}
-			else if (country.id == 392) {
-				return "#08306b"; //Japan
-			}
-			else if (country.id == 400) {
-				return "#c6dbef"; //Jordan
-			}
-			else if (country.id == 398) {
-				return "#9ecae1"; //Kazakhstan
-			}
-			else if (country.id == 404) {
-				return "#9ecae1"; //Kenya
-			}
-			else if (country.id == 454) {
-				return "#deebf7"; //Malawi
-			}
-			else if (country.id == 458) {
-				return "#4292c6"; //Malaysia
-			}
-			else if (country.id == 466) {
-				return "#f7fbff"; //Mali
-			}
-			else if (country.id == 480) {
-				return "#6baed6"; //Mauritius
-			}
-			else if (country.id == 484) {
-				return "#2171b5"; //Mexico
-			}
-			else if (country.id == 504) {
-				return "#9ecae1"; //Morocco
-			}
-			else if (country.id == 516) {
-				return "#9ecae1"; //Namibia
-			}
-			else if (country.id == 524) {
-				return "#deebf7"; //Nepal
-			}
-			else if (country.id == 528) {
-				return "#08306b"; //Netherlands
-			}
-			else if (country.id == 554) {
-				return "rgb(0, 25, 70)"; //New Zealand
-			}
-			else if (country.id == 566) {
-				return "#c6dbef"; //Nigeria
-			}
-			else if (country.id == 578) {
-				return "rgb(0, 25, 70)"; //Norway
-			}
-			else if (country.id == 586) {
-				return "#deebf7"; //Pakistan
-			}
-			else if (country.id == 604) {
-				return "#6baed6"; //Peru
-			}
-			else if (country.id == 608) {
-				return "#6baed6"; //Philippines
-			}
-			else if (country.id == 616) {
-				return "#08519c"; //Poland
-			}
-			else if (country.id == 620) {
-				return "#08519c"; //Portugal
-			}
-			else if (country.id == 634) {
-				return "#9ecae1"; //Qatar
-			}
-			else if (country.id == 410) {
-				return "#08306b"; //Korea
-			}
-			else if (country.id == 643) {
-				return "#6baed6"; //Russia
-			}
-			else if (country.id == 646) {
-				return "#deebf7"; //Rwanda
-			}
-			else if (country.id == 682) {
-				return "#deebf7"; //Saudi Arabia
-			}
-			else if (country.id == 686) {
-				return "#c6dbef"; //Senegal
-			}
-			else if (country.id == 702) {
-				return "#2171b5"; //Singapore
-			}
-			else if (country.id == 710) {
-				return "#4292c6"; //South Africa
-			}
-			else if (country.id == 724) {
-				return "#deebf7"; //Spain
-			}
-			else if (country.id == 752) {
-				return "rgb(0, 25, 70)"; //Sweden 
-			}
-			else if (country.id == 756) {
-				return "#08519c"; //Switzerland
-			}
-			else if (country.id == 764) {
-				return "#6baed6"; //Thailand
-			}
-			else if (country.id == 788) {
-				return "#6baed6"; //Tunisia
-			}
-			else if (country.id == 792) {
-				return "#9ecae1"; //Turkey
-			}
-			else if (country.id == 800) {
-				return "#c6dbef"; //Uganda
-			}
-			else if (country.id == 784) {
-				return "#6baed6"; //United Arab Emirates
-			}
-			else if (country.id == 826) {
-				return "rgb(0, 25, 70)"; //United Kingdom of GB and Northern Ireland
-			}
-			else if (country.id == 834) {
-				return "#9ecae1"; //United Republic of Tanzania
-			}
-			else if (country.id == 858) {
-				return "#2171b5"; //Uruguay
-			}
-			else if (country.id == 862) {
-				return "#9ecae1"; //Venezuela
-			}
-			else if (country.id == 704) {
-				return "#deebf7"; //Vietnam
-			}
-			else if (country.id == 887) {
-				return "#f7fbff"; //Yemen 
-			}
-			else if (country.id == 894) {
-				return "#c6dbef"; //Zambia
-			}
-			else if (country.id == 716) {
-				return "#deebf7"; //Zimbabwe
 			}
 			else {
 				return "rgb(192, 192, 192)";
-			} 
-		})
-		.style("stroke", "#cccccc")
+			}
+		})	
+	})
 });
 //Create Histograms
 var education;
