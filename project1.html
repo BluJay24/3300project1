@@ -427,10 +427,10 @@ var education;
         	return 280+210*((d.edurank-1)%5)
         })
             .attr("y", function(d) {
-           	return 158+170*(Math.floor((d.edurank-1)/5))
+           		return 158+170*(Math.floor((d.edurank-1)/5))
         	})
             .text(function(d) {
-           	return String(d.AVG) + "%"
+           		return String(d.AVG) + "%"
        		})
             .attr("font-family", "sans-serif")
             .attr("font-size", "10px")
