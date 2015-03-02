@@ -1,12 +1,15 @@
 <html>
 <head>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<!--The dataset for world map was found here: 
+https://github.com/mimno/info3300-spr2015/blob/master/Prompts/022315/world-50m.json -->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <!-- Load the d3 library. -->
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
 <style>
 body { 
-	font-family: "Open Sans"; 
+	font-family: "Open Sans";
 }
 
 div { 
@@ -232,6 +235,8 @@ var g = svg.append("g");
 var worldData;
 
 //Update country colors on the map
+//World Map obtained from Professor Mimno's GitHub in notes of 2/23
+//Format and structure of code modeled after lecture notes, but contents are completely different
 d3.json("world-50m.json", function(error, world) {
 	
 	worldData = world;
@@ -248,6 +253,8 @@ d3.json("world-50m.json", function(error, world) {
 		.style("stroke", "#cccccc")
 		.style("fill", function(country) {
 
+            //Web Index Numbers obtained from http://legacy.thewebindex.org/?page_id=41
+            //CSV file created manually 
 			var countryData = webRanking.get(country.id);
 
 			if (countryData) {
@@ -290,6 +297,8 @@ d3.json("world-50m.json", function(error, world) {
 });
 //Create Histograms
 var education;
+    //Education statistics obtained from http://databank.worldbank.org/Data/Views/VariableSelection/SelectVariables.aspx?source=Education-Statistics:-Education-Attainment#
+    //JSON file incorporating index score and education percentage created manually 
 	d3.json("new_education.json", function(error, data){
 
 		education = data;
@@ -388,7 +397,8 @@ var education;
          		return 20+170*(Math.floor((d.edurank-1)/5))
          	})
          	.attr("stroke", "#f03b20")
-         	.attr("stroke-width", 2);
+         	.attr("stroke-width", 2)
+            .attr("opacity", "0.5");
 
     var scaleline50 = svg.selectAll("line1").data(education).enter().append("line");
     	scaleline50.attr("x1", function(d) {
@@ -404,7 +414,8 @@ var education;
          		return 70+170*(Math.floor((d.edurank-1)/5))
          	})
          	.attr("stroke", "#636363")
-         	.attr("stroke-width", 2);
+         	.attr("stroke-width", 2)
+            .attr("opacity", "0.5");
 
 	var country = svg.selectAll("text").data(education).enter().append("text");
 		country.attr("x", function(d) {
@@ -597,7 +608,8 @@ var education;
             .attr("x2", 140)
             .attr("y2",360)
             .attr("stroke", "#f03b20")
-            .attr("stroke-width", 2);
+            .attr("stroke-width", 2)
+            .attr("opacity", "0.5");
 
     var fifty = svg.append("line");
         fifty.attr("x1", 80 )
@@ -605,7 +617,8 @@ var education;
             .attr("x2", 140)
             .attr("y2",380)
             .attr("stroke", "#636363")
-            .attr("stroke-width", 2);
+            .attr("stroke-width", 2)
+            .attr("opacity", "0.5");
 
   	var UA = svg.append("text");
         UA.attr("x", 10)
