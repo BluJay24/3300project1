@@ -3,7 +3,7 @@
     "webrank":81,
     "Country":"Yemen",
     "WebIndex":0,    
-    "EduPercent":10.7
+    "EduPercent":8.416666667
   },
   {
     "webrank":80,
@@ -15,37 +15,37 @@
     "webrank":79,
     "Country":"Mali",
     "WebIndex":7.7,    
-    "EduPercent":3.9
+    "EduPercent":2.72
   },
   {
     "webrank":78,
     "Country":"Zimbabwe",
     "WebIndex":10.1,    
-    "EduPercent":6.8
+    "EduPercent":7.353333333
   },
   {
     "webrank":77,
     "Country":"Pakistan",
     "WebIndex":10.4,    
-    "EduPercent":19.1
+    "EduPercent":17.19666667
   },
   {
     "webrank":76,
     "Country":"Cameroon",
     "WebIndex":10.6,    
-    "EduPercent":15.3
+    "EduPercent":13.63666
   },
   {
     "webrank":75,
     "Country":"Rwanda",
     "WebIndex":12.0,    
-    "EduPercent":6.2
+    "EduPercent":4.876666667
   },
   {
     "webrank":74,
     "Country":"Malawi",
     "WebIndex":12.2,    
-    "EduPercent":7.9
+    "EduPercent":6.506666667
   },
   {
     "webrank":73,
@@ -57,66 +57,66 @@
     "webrank":72,
     "Country":"Vietnam",
     "WebIndex":13.8,    
-    "EduPercent":19.4
+    "EduPercent":14.19333333
   },
   {
     "webrank":10,
     "Country":"Korea",
     "WebIndex":87.4,    
-    "EduPercent":35.5
+    "EduPercent":39.30666667
   },
   {
     "webrank":9,
     "Country":"France",
     "WebIndex":90.9,    
-    "EduPercent":38.2
+    "EduPercent":35.98666667
   },
   {
     "webrank":8,
     "Country":"Iceland",
     "WebIndex":91.9,    
-    "EduPercent":25.2
+    "EduPercent":25.30666667
   },
   {
     "webrank":7,
     "Country":"Finland",
     "WebIndex":91.9,    
-    "EduPercent":21.7
+    "EduPercent":27.43333333
   },
   {
     "webrank":6,
     "Country":"Denmark",
     "WebIndex":92.4,    
-    "EduPercent":38.9
+    "EduPercent":38.50333333
   },
   {
     "webrank":5,
     "Country":"New Zealand",
     "WebIndex":92.4,    
-    "EduPercent":15.5
+    "EduPercent":17.52333333
   },
   {
     "webrank":4,
     "Country":"United States",
     "WebIndex":95.2,    
-    "EduPercent":36.2
+    "EduPercent":34.11333333
   },
   {
     "webrank":3,
     "Country":"United Kingdom",
     "WebIndex":95.6,    
-    "EduPercent":47.3
+    "EduPercent":29.35666667
   },
   {
     "webrank":2,
     "Country":"Norway",
     "WebIndex":97.5,    
-    "EduPercent":40.3
+    "EduPercent":38.62333333
   },
   {
     "webrank":1,
     "Country":"Sweden",
     "WebIndex":100,    
-    "EduPercent":48.3
+    "EduPercent":48.54333333
   }
 ]
