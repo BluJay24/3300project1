@@ -28,6 +28,21 @@ svg {
 	fill: black;
 	font-family: "sans-serif"; 
 }
+
+#bubbleCanvas { 
+    margin: 0px;
+}
+
+.axis path { 
+    fill: none;
+    stroke: #777; 
+    stroke-width: 3;
+}
+
+.axis line { 
+    stroke: #777; 
+    stroke-width: 3;
+}
 </style>
 </head>
 <body>
@@ -61,6 +76,23 @@ svg {
 
 <div id="canvas" style="border:none"></div>
 
+<div id="bubble_legend">
+    <svg height="170" width="1200" style="border:none"> 
+    <text x="600" y="50" dominant-baseline="central" text-anchor="middle" fill="black" font-family="sans-serif" 
+        font-size="32">Web Index Score vs Education Levels</text>
+    <text x="600" y="90" dominant-baseline="central" text-anchor="middle" fill="black" font-family="sans-serif" 
+        font-size="16">The size of each bubble corresponds to the percentage of each country's population that has completed secondary education</text>
+    <rect x="400" y="130" width="40" height="40" fill="red" fill-opacity="0.2"></rect>
+    <text x="450" y="160" dominant-basline="central" text-anchro="middle"  fill="black" font-family="sans-serif"
+        font-size="20">Bottom 10 Countries</text>
+    <rect x="700" y="130" width="40" height="40" fill="green" fill-opacity="0.2"></rect>
+    <text x="750" y="160" dominant-basline="central" text-anchro="middle"  fill="black" font-family="sans-serif"
+        font-size="20">Top 10 Countries</text>
+    </svg>     
+ </div>
+
+<div id="bubbleCanvas"></div>
+
 <script>
 //Create Map
 var width = 1275,
@@ -77,7 +109,7 @@ var svg = d3.select("#world_map").append("svg")
 
 var map_legend = d3.select("#world_legend").append("svg")
 	.attr("width", 1000)
-	.attr("height", 100)
+	.attr("height", 150)
 	.style("float", "left")
 	.style("border", "none"); 
 
@@ -95,7 +127,7 @@ var index_1 = map_legend.append("rect");
         .attr("y", 30)
         .attr("width", 100)
         .attr("height", 25)
-        .style("fill","#f7fbff");
+        .style("fill", "#f7fbff");
 
 var index_1_name = map_legend.append("text");
     index_1_name.attr("x", 0)
@@ -230,13 +262,22 @@ var index_10_name = map_legend.append("text");
         .attr("fill", "black")
 		.text("90 - 100");
 
+var map_source = map_legend.append("text"); 
+    map_source.attr("x", 500)
+        .attr("y", 115)
+        .attr("text-anchor", "middle")
+        .attr("font-family", "sans-serif")
+        .attr("fill", "black")
+        .attr("font-size", "14px")
+        .text("Source: World Wide Web Foundation");
+
 var g = svg.append("g");
 
 var worldData;
 
 //Update country colors on the map
-//World Map obtained from Professor Mimno's GitHub in notes of 2/23
-//Format and structure of code modeled after lecture notes, but contents are completely different
+//World Map obtained from https://github.com/mimno/info3300-spr2015/tree/master/Notes/022315
+//Format and structure of code for accessing a csv file within a json file concept modeled after lecture notes, but contents are completely different
 d3.json("world-50m.json", function(error, world) {
 	
 	worldData = world;
@@ -304,7 +345,7 @@ var education;
 		education = data;
         
     var svg = d3.select("#canvas").append("svg").style("border", "none")
-     	.attr("height",1300)
+     	.attr("height",1075)
      	.attr("width",1200);
 
         
@@ -661,6 +702,127 @@ var education;
             .attr("dominant-baseline","central") 
 		    .attr("text-anchor","middle")
 		    .text("Source: Education Attainment & 2013 World Wide Web Foundation");
+});
+//Bubble chart visualization
+//Education data source: http://databank.worldbank.org/Data/Views/VariableSelection/SelectVariables.aspx?source=Education-Statistics:-Education-Attainment#
+var eduData;
+
+d3.json("education_bubble.json", function (error, data) {
+    eduData = data;
+    var height = 950;
+    var width = 1200;
+    
+    var maxIndex = d3.max(eduData, function (d) {
+        return d.WebIndex;
+    });
+
+    var maxPercent = d3.max(eduData, function (d) {
+        return d.EduPercent;
+    }); 
+
+    var svg = d3.select("#bubbleCanvas").append("svg")
+        .attr("height", height)
+        .attr("width", 1400)
+        .style("border", "none");
+
+    var xScale = d3.scale.ordinal().domain(data.map(function (d) {
+            return d.Country;
+        }))
+        .range(data.map(function (d,i) {
+            return i* 60;
+        }));
+
+    var yScale = d3.scale.linear().domain([0, maxIndex]).range([720,60]);
+    
+    var radiusScale = d3.scale.sqrt().domain([0, maxPercent]).range([0, 35]);
+    
+    var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+         
+    var yAxis = d3.svg.axis().scale(yScale).orient("left");
+    
+    svg.append("g").attr("class", "axis")
+        .attr("transform", "translate(120,720)")
+        .call(xAxis).selectAll("text")  
+        .style("text-anchor", "end")
+        .attr("dx", "-.8em")
+        .attr("dy", ".15em")
+        .style("font-family", "sans-serif")
+        .attr("transform", function(d) {
+            return "rotate(-65)";
+        });
+        
+    svg.append("text")
+        .attr("transform", "translate(" + ((width / 2) + 40)  + " ," + (height - 90) + ")")
+        .style("text-anchor", "start")
+        .style("font-size", "30")
+        .style("font-family", "sans-serif")
+        .text("Country");
+    
+    svg.append("g").attr("class", "axis")
+        .attr("transform", "translate(120,0)")
+        .style("font-family", "sans-serif")
+        .call(yAxis);
+    
+    svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -375)
+        .attr("y", 60)
+        .style("text-anchor", "middle")
+        .style("font-size", "30")
+        .style("font-family", "sans-serif")
+        .text("Web Index Score");
+    
+    var circles = svg.selectAll("circle").data(eduData)
+        .enter().append("circle");
+    
+    circles.attr("cx", function(d) { 
+        return xScale(d.Country) + 120
+    })
+        .attr("cy", function(d) { 
+        return yScale(d.WebIndex) 
+    })
+        .attr("r", function(d) { 
+        return radiusScale(d.EduPercent) 
+    })
+        .attr("opacity", 0.6)
+        .style("fill", "blue");
+        
+    svg.append("rect").attr("x", "120")
+        .attr("y", "0")
+        .attr("width", "570")
+        .attr("height", "720")
+        .attr("fill", "red")
+        .attr("fill-opacity", "0.2");
+    
+    svg.append("rect").attr("x", "690")
+        .attr("y", "0")
+        .attr("width", "607")
+        .attr("height", "720")
+        .attr("fill", "green")
+        .attr("fill-opacity", "0.2");
+            
+    var topTenRect = svg.append("rect").attr("x", "1400")
+        .attr("y", "180")
+        .attr("width", "40")
+        .attr("height", "40")
+        .attr("fill", "green")
+        .attr("fill-opacity", "0.2");
+    
+    var topTenRectLabel = svg.append("text")
+        .attr("x", "1525")
+        .attr("y", "210")
+        .style("text-anchor", "middle")
+        .style("font-size", "20")
+        .style("font-family", "sans-serif")
+        .text("Top 10 Countries");
+                
+    svg.append("text")
+        .attr("x", "700")
+        .attr("y", "900")
+        .style("text-anchor", "middle")
+        .style("font-family", "sans-serif")
+        .style("font-size", "14")
+        .text("Source: World Bank Education Attainment Statistics");
 });
 </script>
 </body>
