@@ -1,4 +1,4 @@
-# 3330project1
+# CS3300_Project 1
 
 First project for CS/INFO 3300, a course on Data Driven Web Applications at Cornell University. 
 
